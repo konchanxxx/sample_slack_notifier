@@ -51,4 +51,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Slack Notifier incoming webhook url
+  config.slack_webhook_url = ENV['SLACK_WEBHOOK_URL']
 end

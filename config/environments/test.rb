@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Slack Notifier incoming webhook url
+  config.slack_webhook_url = ENV['SLACK_WEBHOOK_URL']
 end
