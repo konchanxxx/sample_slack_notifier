@@ -3,11 +3,11 @@ class SlackNoticeJob < ApplicationJob
 
   WEBHOOK_URL = Rails.application.config.slack_webhook_url.freeze
 
-  def perform(*args)
+  def perform(channel, username, message)
     notifier = Slack::Notifier.new WEBHOOK_URL do
-      defaults channle: '#random', username: 'notifier'
+      defaults channel: "##{channel}", username: username
     end
 
-    notifier.ping 'Hello!!'
+    notifier.ping message.to_s
   end
 end
